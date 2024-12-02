@@ -54,3 +54,30 @@ export class Servers extends Component {
         )
     }
 }
+
+export class User extends Component {
+    constructor(props) {
+        super(props);
+        this.servers = [new Server(props)];
+        this.current_server = this.servers[0];
+        this.user_name = "testinggggg";
+    }
+    addServer(server) {
+        this.servers.push(server);
+    }
+    getServerSelectInfo() {
+        const server_select_info = [];
+        for (const server of this.servers) server_select_info.push(server.renderServerSelectInfo());
+        return server_select_info;
+    }
+    render(props) {
+        return (
+            <>
+            <div className='servers'>
+                {this.getServerSelectInfo()}
+            </div>
+            {this.current_server.render()}
+            </>
+        )
+    }
+}
