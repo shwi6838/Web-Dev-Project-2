@@ -14,6 +14,16 @@ Using Firestore Databases, we can use realtime updating databases to store messa
 
 I also plan to find a UI kit that we can use and customize for our components for a clear and good looking User Experience of the app, and to intorduce myself to these UI frameworks that work with React. We will not make an exact Discord clone, but make our own similar chatroom app and style it in our own way. 
 
+## Pictures /Documentation
+Welcome Page Version 1
+![Welcome 1](public/Progress-Images/WelcomeV1.jpg)
+
+App Page Version 1
+![App 1](public/Progress-Images/AppV1.jpg)
+
+ChatRoom Version 1
+![Chat 1](public/Progress-Images/ChatV1.jpg)
+
 # Project 2 Reflection
 
 # React + Vite
