@@ -1,3 +1,11 @@
+# Project 2 Proposal
+
+# Project 2 WIP Check In
+
+# Project 2 Reflection
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
