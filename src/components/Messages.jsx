@@ -1,59 +1,36 @@
-import './Messages.css'
-import {Component, useRef, useEffect, useState} from 'react'
+import React, { useState } from 'react';
 
+function ChatRoom({ messages }) {
+    const [newMessage, setNewMessage] = useState("");
 
-export class Message extends Component {
-    constructor(props, text) {
-        super(props);
-        this.text = text;
-    }
-    setText(text) { 
-        this.text = text;
-    }
-    displayMessage() {
-        return (
-            <div className='message'>
-                {this.text}
-            </div>
-        )
-    }
-    render() {
-        return (<></>)
-    }
-}
-
-export class Messages extends Component {
-    constructor(props) {
-        super(props);
-        this.props = props;
-        this.messages = [new Message(props, "test"+Math.random())];
-    }
-    addMessage(text) { 
-        this.messages.push(new Message(this.props, text));
-    }
-    displayMessages() {
-        const message_texts = [];
-        for (const message of this.messages) {
-            message_texts.push(message.displayMessage());
+    const handleSendMessage = () => {
+        if (newMessage.trim()) {
+            messages.push({ username: "You", text: newMessage });
+            setNewMessage("");
         }
-        return message_texts.reverse();
-    }
-    render() {
-        return (
-            <>
-                <div className='messages'>
-                    {this.displayMessages()}
-                </div>
-                <div className="send_message">
-                    <input type="text" onKeyDown={(e) => {
-                        if (e.key == "Enter") {
-                            this.addMessage(e.target.value);
-                            e.target.value = ""; 
-                            this.props.children.setUpdate(!this.props.children.update);
-                        }
-                    }}></input>
-                </div>
-            </>
-        )
-    }
+    };
+
+    return (
+        <div className="chat-room">
+            <h3>Chat Room</h3>
+            <div className="messages">
+                {messages.map((message, index) => (
+                    <div key={index} className="message">
+                        <strong>{message.username}:</strong> {message.text}
+                    </div>
+                ))}
+            </div>
+            <div className="input-area">
+                <input
+                    type="text"
+                    value={newMessage}
+                    onChange={(e) => setNewMessage(e.target.value)}
+                    placeholder="Type a message..."
+                />
+                <button onClick={handleSendMessage}>Send</button>
+            </div>
+        </div>
+    );
 }
+
+export default ChatRoom;
