@@ -6,9 +6,9 @@ import ChatRoom from './components/Messages';
 import WelcomeScreen from './components//WelcomeScreen';
 import { mockData } from './assets/mockData';
 import './index.css';
-import { collection, query, where, getDocs, addDoc } from 'firebase/firestore';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { compare, genSaltSync, hashSync } from 'bcryptjs-react';
+// import { collection, query, where, getDocs, addDoc } from 'firebase/firestore';
+// import { useAuthState } from 'react-firebase-hooks/auth';
+// import { compare, genSaltSync, hashSync } from 'bcryptjs-react';
 import { Signup, Login, salt } from './auth.js';
 
 
@@ -19,10 +19,10 @@ function App() {
     const [login, setLogin] = useState({
         username: '',
         password: '',
-        task: false,
+        task: null,
         auth: false,
         servers: []
-      });
+      }); //an empty login object initialized
     //const [login, setLogin] = useState(null);
 
     //const mockData = mockData.servers[selectedServer];
@@ -45,8 +45,9 @@ function App() {
             console.log(`[DEBUG] User ${login.username} is logged in`);
             return;
         }
-        if (login.task == "login") { Login(); }
-        else if (login.task == "signup") { Signup(); }
+        if (login.task == "login") { Login(login); }
+        else if (login.task == "signup") { Signup(login); }
+        else if (login.task == null) { console.log('[DEBUG] No task'); }
         else { console.log(`[ERROR] Unknown task ${login.task}`); }
     } , [login]);
 

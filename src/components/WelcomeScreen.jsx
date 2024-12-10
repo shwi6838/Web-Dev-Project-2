@@ -8,46 +8,66 @@ function WelcomeScreen({ login, setLogin }) {
     const [curr_password, setPassword] = useState('');
     const [error, setError] = useState('');
     
-    const handleSignUp = async () => {
-        try {
-          setLogin({
-            ...login,
-            username: curr_username,
-            password: curr_password,
-            task: true,
-            auth: true,
-            servers: []
-          });
-          await Signup(login); // Call Signup
-          await Login(login); // Auto-login after signup
-          console.log(`[DEBUG] User ${username} signed up and logged in`);
-        } catch (err) {
-          console.error(err);
-          setError('Signup failed. Please try again.');
-        }
+    const handleSignUp = () => {
+        const login_info = {
+            "username": curr_username,
+            "password": curr_password,
+            "task": "signup",
+            "auth": false,
+            "servers": []
+        };
+        setLogin(login_info);
+        // console log the login info
+        console.log(`[DEBUG] login: ${login_info.username}`);
+        console.log(`[DEBUG]  password: ${login_info.password}`);
+        console.log(`[DEBUG]  task: ${login_info.task}`);
+        console.log(`[DEBUG]  auth: ${login_info.auth}`);
+        // try {
+        //   Signup(login); // Call Signup
+        //   Login(login); // Auto-login after signup
+        //   console.log(`[DEBUG] User ${username} signed up and logged in`);
+        // } catch (err) {
+        //   console.error(err);
+        //   setError('Signup failed. Please try again.');
+        // }
     };
 
     useEffect(() => {
         console.log('[DEBUG] Welcome Screen rendered');
     }, []);
 
-    const handleLogin = async () => {
-        try {
-          setLogin({
-            ...login,
-            username: curr_username,
-            password: curr_password,
-            task: true, 
-            auth: true,
-            servers: mockData.servers || [] //need to set to actual data
-          });
-          await Login(login); // Call Login
-          console.log(`[DEBUG] User ${username} logged in`);
-        } catch (err) {
-          console.error(err);
-          setError('Login failed. Please try again.');
-        }
+    const handleLogin = () => {
+        const login_info= {
+            "username": curr_username,
+            "password": curr_password,
+            "task": "login",
+            "auth": false,
+            "servers": []
+        };
+        setLogin(login_info);
+        console.log(`[DEBUG] login: ${login_info.username}`);
+        console.log(`[DEBUG]  password: ${login_info.password}`);
+        console.log(`[DEBUG]  task: ${login_info.task}`);
+        console.log(`[DEBUG]  auth: ${login_info.auth}`);
+        // try {
+        //   Login(login); // Call Login
+        //   console.log(`[DEBUG] User ${username} logged in`);
+        // } catch (err) {
+        //   console.error(err);
+        //   setError('Login failed. Please try again.');
+        // }
     };
+
+    useEffect(() => {
+        if (login) {
+            console.log(`[DEBUG] Updated login state:`);
+            console.log(`[DEBUG] username: ${login.username}`);
+            console.log(`[DEBUG] password: ${login.password}`);
+            console.log(`[DEBUG] task: ${login.task}`);
+            console.log(`[DEBUG] auth: ${login.auth}`);
+        }
+    }, [login]); // to see the changes
+    
 
     return (
         <div>
