@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ChannelsList({ channels, onSelectChannel }) {
+function ChannelsList({ login, channels, onSelectChannel }) {
     return (
         <div className="channels-list">
             <h3>Channels</h3>

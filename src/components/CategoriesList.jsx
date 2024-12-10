@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CategoriesList({ categories, onSelectCategory }) {
+function CategoriesList({ login, categories, onSelectCategory }) {
     return (
         <div className="categories-list">
             <h3>Categories</h3>

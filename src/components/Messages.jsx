@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-function ChatRoom({ messages }) {
+function ChatRoom({ login, messages }) {
     const [newMessage, setNewMessage] = useState("");
 
     const handleSendMessage = () => {
         if (newMessage.trim()) {
-            messages.push({ username: "You", text: newMessage });
+            messages.push({ username: login.username, text: newMessage });
             setNewMessage("");
         }
     };

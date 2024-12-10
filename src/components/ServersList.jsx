@@ -3,7 +3,7 @@ import { ref, get } from 'firebase/database';
 import database from '/firebaseConfig';
 import { mockData } from '../assets/mockData';
 
-function ServersList({ servers, onSelectServer }) {
+function ServersList({ login, servers, onSelectServer }) {
     // const [servers, setServers] = useState([]);
     // const [loading, setLoading] = useState(true);
 
