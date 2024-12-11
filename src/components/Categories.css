@@ -1,26 +1,32 @@
-.categories { 
-    grid-area: 1 / 1 / 2 / 2; 
-    height: 100%;
-    width: 100%;
+.categories-list { 
+    background-color: rgb(70, 200, 243);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }
-.categories .catgory {
-    height: fit-content;
-    width: inherit;
+
+.category-item {
+    background-color: lightblue;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: 10px;   
 }
-.categories .category label {
-    color: inherit;
+
+.cat-title {
+    color:black;
+    font-size: medium;
+    font-weight: bold;
+    background-color: lightblue;
+    padding: 5px;
+    border: 3px solid black; 
+    border-radius: 10px;
 }
-.categories .category button {
-    height: fit-content;
-    width: 100%;
-    border: none;
-    background-color: transparent;
-    color: inherit;
-    text-align: left;
+
+.channel-item {
+    background-color: rgb(115, 116, 117);
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px;   
 }
-.categories .category button:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-.current_messages { 
-    grid-area: 1 / 2 / 2 / 3; 
-} 

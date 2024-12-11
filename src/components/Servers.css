@@ -1,24 +1,23 @@
-.servers {
-    grid-area: 1 / 1 / 2 / 2;
+.servers-list {
     background-color: green;
     display: flex;
     flex-direction: column;
-    flex: 0;
-    height: 100%;
-    width: 100%;
 }
-.servers .server_select_info {
-    height: fit-content;
-    width: inherit;
-}
-.server {
-    grid-area: 1 / 2 / 2 / 3;
+
+.serveritem {
     background-color: lightgreen;
-    width: inherit;
-    height: inherit;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;     
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+h3 {
+    color:black;
+    font-size: medium;
+    font-weight: bold;
+    background-color: lightgreen;
+    padding: 5px;
+    border: 3px solid black; 
+    border-radius: 10px;
 }

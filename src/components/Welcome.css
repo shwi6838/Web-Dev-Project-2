@@ -1,33 +1,38 @@
 .welcome {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 30vh;
-    width: 40vw;
-    background-color: navy;
+    background-color: rgba(6, 6, 79, 0.908);
+    width: 100%;
+    display  : flex;
+    flex-direction: column;
 }
 
-#sign-in {
+.input {
+    height: 30px;
+    width: 200px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 3px solid rgb(89, 81, 81);
     background-color: transparent;
-    color: navy;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    width: 140px;
-    height: 40px;
-    margin-bottom: 20px;
+    color: white;
 }
 
-#google-logo {
-    width: 140px;
-    height: 40px;
+.button {
+    height: 30px;
+    width: 100px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 3px solid rgb(89, 81, 81);
+    background-color: whitesmoke;
+    color: black;
 }
 
 h1 {
     color: white;
-    padding: 10px;
+    padding-bottom: 5px;
 }
 p {
     color: white;
